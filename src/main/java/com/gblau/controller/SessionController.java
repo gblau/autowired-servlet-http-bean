@@ -22,7 +22,7 @@ import static com.gblau.common.ResponseModel.ok;
  * @date 2017-09-06
  */
 @RestController
-public class SessionTestController {
+public class SessionController {
     @Autowired
     private HttpServletRequest request;
     @Autowired
