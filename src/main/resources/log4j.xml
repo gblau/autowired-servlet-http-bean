@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+    <!-- appenders   <param name="file" value="/Users/jiamingku/logs/Common/log" />-->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS\} %-5p] (%c{1}:%L) %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="default_appender" class="org.apache.log4j.RollingFileAppender">
+        <!--<param name="file" value="/data/logs/servitization.log" />-->
+        <param name="file" value="/usr/local/resources/anti_fraud_log/servitization.log"/>
+        <param name="Append" value="true"/>
+        <param name="encoding" value="utf-8"/>
+        <param name="maxBackupIndex" value="9"/>
+        <param name="maxFileSize" value="104857600"/>
+        <param name="threshold" value="INFO"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS\} %-5p] (%c{1}:%L) %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="default_appender_error" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="/usr/local/resources/anti_fraud_log/servitization_error.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="encoding" value="utf-8"/>
+        <param name="threshold" value="ERROR"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss.SSS\} %-5p] (%c{1}:%L) %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="org.springframework">
+        <level value="ERROR"/>
+    </logger>
+    <logger name="org.apache.zookeeper">
+        <level value="ERROR"/>
+    </logger>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="default_appender"/>
+        <appender-ref ref="default_appender_error"/>
+    </root>
+</log4j:configuration>
