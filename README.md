@@ -231,4 +231,6 @@ public ResponseModel testSession(HttpSession  methodGetSession) {
 - @Autowired session和普通获取session是不一样的
 - 方法获取session和request的session是一样的。其实如果删掉方法里的session，第一次false获取session会返回null，`request session 为空吗？`会打印`true`
 
-查看实现原理请转我的简书文章： ![@Autowired HttpSession & HttpServletRequest原理](http://www.jianshu.com/p/0d24026bfdfd)
+查看实现原理请转我的简书文章： ![@Autowired HttpSession & HttpServletRequest原理][1]
+
+[1]: http://www.jianshu.com/p/0d24026bfdfd
