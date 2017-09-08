@@ -11,6 +11,8 @@
     <java-version>1.7</java-version>
     <jackson.version>2.5.4</jackson.version>
     <org.springframework-version>4.3.8.RELEASE</org.springframework-version>
+    <!-- 也可以换成Spring3 无所谓 -->
+    <!-- <org.springframework-version>3.2.5.RELEASE</org.springframework-version> -->
   </properties>
 
   <dependencies>
