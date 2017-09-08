@@ -2,7 +2,7 @@
 
 ## 配置
 
-首先使用依赖配置这两个对象
+所有的测试代码其实都在`com.gblau.controller.SessionController`中，以下是我个人测试的部分数据，只贴出最简单的测试结果，可以自行进行其他测试，比如整合`Shiro`
 
 ```
 @Autowired
